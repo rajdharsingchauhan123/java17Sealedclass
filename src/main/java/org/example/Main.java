@@ -8,17 +8,22 @@ public class Main {
 
     private static void foo(Object o){
         switch (o){
-            case Integer i -> System.out.println("String i");
-            case  String s -> System.out.println("This is a string ");
+            case Integer i -> System.out.println("String i" +i);
+            case  String s && s.length()>1 -> System.out.println("Tis" +s);
             default -> System.out.println("object");
 
         }
     }
 
     public static void main(String[] args) {
-foo("hello");
+foo("s");
 foo(4);
 foo(1.4);
+foo(bar());
+foo(Integer.valueOf(11));
 
+    }
+    public  static Object bar(){
+        return new Object();
     }
 }
